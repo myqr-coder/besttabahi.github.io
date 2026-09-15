@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060912">
+<meta name="description" content="TABAHI HACKER — Grow • Marketing • Investment • Market Insights">
+<meta name="robots" content="index,follow">
+<title>TABAHI HACKER — Grow • Marketing • Investment • Market Insights</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#05070d;--bg2:#080d18;--text:#f8fbff;--muted:#98a5b8;
+  --blue:#159fe0;--cyan:#5be0ff;--purple:#7658ff;--green:#38e49a;
+  --line:rgba(255,255,255,.085);--card:rgba(12,18,31,.72);
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;min-height:100vh;color:var(--text);background:
+ radial-gradient(700px 420px at 15% -5%,rgba(21,159,224,.15),transparent 65%),
+ radial-gradient(650px 430px at 90% 10%,rgba(118,88,255,.14),transparent 68%),
+ linear-gradient(180deg,var(--bg),var(--bg2) 55%,#05070c);
+ font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;opacity:.18;
+ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+ background-size:46px 46px;
+ mask-image:linear-gradient(#000,transparent 88%);
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(var(--max),calc(100% - 28px));margin:auto}
+
+/* Ambient lights */
+.light{position:fixed;border-radius:50%;pointer-events:none;z-index:-1;filter:blur(2px)}
+.l1{width:210px;height:210px;left:-120px;top:35%;background:rgba(21,159,224,.13);animation:drift 12s ease-in-out infinite}
+.l2{width:250px;height:250px;right:-140px;top:58%;background:rgba(118,88,255,.11);animation:drift 15s ease-in-out infinite reverse}
+.l3{width:130px;height:130px;left:45%;top:6%;background:rgba(91,224,255,.07);filter:blur(30px);animation:pulse 7s ease-in-out infinite}
+
+/* Header */
+header{position:fixed;top:max(9px,env(safe-area-inset-top));left:0;right:0;z-index:50}
+.nav{
+ min-height:60px;display:flex;align-items:center;justify-content:space-between;
+ padding:8px 9px 8px 12px;border:1px solid var(--line);border-radius:17px;
+ background:rgba(5,9,17,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+ box-shadow:0 12px 38px rgba(0,0,0,.28)
+}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand-icon{
+ width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;border-radius:12px;
+ background:linear-gradient(145deg,#22b4ee,#11679d);box-shadow:0 0 25px rgba(21,159,224,.25)
+}
+.brand-name{font:800 12px Sora,sans-serif;letter-spacing:.045em;white-space:nowrap}
+.brand-sub{display:block;color:#69778c;font-size:9px;letter-spacing:.09em;margin-top:2px}
+.join-mini{
+ padding:10px 13px;border-radius:11px;background:#159fe0;border:1px solid rgba(255,255,255,.12);
+ font-size:11px;font-weight:800;white-space:nowrap;transition:.22s
+}
+.join-mini:active{transform:scale(.96)}
+
+/* Hero */
+.hero{padding:125px 0 72px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px}
+.badge{
+ display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border-radius:999px;
+ color:#bdefff;background:rgba(21,159,224,.08);border:1px solid rgba(91,224,255,.16);
+ font-size:10px;font-weight:800;letter-spacing:.1em
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:ping 1.8s infinite}
+h1{font:800 clamp(43px,7vw,75px)/.98 Sora,sans-serif;letter-spacing:-.06em;margin:19px 0 16px}
+.gradient{
+ background:linear-gradient(110deg,#fff 8%,#73e4ff 38%,#8a75ff 68%,#fff 94%);
+ background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+ animation:gradient 7s linear infinite
+}
+.tagline{font:600 clamp(15px,2vw,20px)/1.35 Sora,sans-serif;color:#dce5f2;margin:0 0 17px}
+.copy{max-width:590px;color:var(--muted);font-size:14px;line-height:1.8;margin:0}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.btn{
+ min-height:51px;padding:0 18px;border-radius:13px;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+ font-size:12px;font-weight:800;transition:.25s;position:relative;overflow:hidden
+}
+.primary{background:linear-gradient(135deg,#159fe0,#286eff 60%,#7658ff);box-shadow:0 14px 38px rgba(21,159,224,.23)}
+.primary:after{
+ content:"";position:absolute;top:0;bottom:0;left:-70%;width:40%;
+ background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+ transform:skewX(-20deg);animation:shine 4s ease-in-out infinite
+}
+.primary:hover{transform:translateY(-3px);box-shadow:0 20px 48px rgba(21,159,224,.34)}
+.secondary{border:1px solid var(--line);background:rgba(255,255,255,.035);color:#c8d3e2}
+.secondary:hover{transform:translateY(-3px);border-color:rgba(91,224,255,.25)}
+.micro{display:flex;gap:15px;flex-wrap:wrap;margin-top:14px;color:#667489;font-size:10px}
+.micro span:before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--green);margin:0 6px 1px 0}
+
+/* Visual */
+.visual{min-height:440px;display:grid;place-items:center;position:relative}
+.glow{
+ position:absolute;width:350px;height:350px;border-radius:50%;
+ background:radial-gradient(circle,rgba(21,159,224,.2),rgba(118,88,255,.08) 45%,transparent 70%);
+ filter:blur(16px);animation:pulse 5s ease-in-out infinite
+}
+.avatar-wrap{width:275px;height:275px;position:relative;display:grid;place-items:center}
+.ring{
+ position:absolute;inset:-15px;border-radius:50%;
+ background:conic-gradient(from 0deg,#1eb8ef,#7658ff,#62e2ff,#1eb8ef);
+ animation:spin 8s linear infinite;filter:drop-shadow(0 0 22px rgba(21,159,224,.3))
+}
+.ring:after{content:"";position:absolute;inset:4px;border-radius:50%;background:#070b14}
+.avatar{
+ width:245px;height:245px;border-radius:50%;overflow:hidden;position:relative;z-index:2;
+ border:5px solid #090f1a;background:#101827;box-shadow:0 30px 70px rgba(0,0,0,.5)
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.floating{
+ position:absolute;z-index:5;padding:10px 12px;border:1px solid rgba(255,255,255,.09);
+ border-radius:13px;background:rgba(8,13,23,.82);backdrop-filter:blur(13px);
+ box-shadow:0 15px 35px rgba(0,0,0,.3);font-size:10px;color:#94a3b8;animation:float 5s ease-in-out infinite
+}
+.floating b{display:block;color:#fff;font-size:12px;margin-bottom:2px}
+.f1{left:-22px;top:65px}.f2{right:-20px;top:105px;animation-delay:-1.8s}.f3{left:0;bottom:45px;animation-delay:-3s}
+.status{position:absolute;right:-12px;bottom:18px;z-index:6;padding:9px 11px;border-radius:12px;background:rgba(7,12,21,.88);border:1px solid rgba(255,255,255,.1);font-size:9px;font-weight:800}
+.status i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:5px}
+
+/* Sections */
+section{padding:82px 0}
+.head{text-align:center;max-width:650px;margin:0 auto 34px}
+.kicker{color:#55dfff;text-transform:uppercase;letter-spacing:.15em;font-size:10px;font-weight:800;margin-bottom:9px}
+h2{font:700 clamp(27px,4vw,40px)/1.15 Sora,sans-serif;letter-spacing:-.045em;margin:0 0 12px}
+.head p{color:var(--muted);font-size:13px;line-height:1.7;margin:0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.card{
+ padding:23px;border-radius:19px;border:1px solid var(--line);
+ background:linear-gradient(145deg,rgba(17,25,41,.72),rgba(8,12,21,.65));
+ transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;position:relative;overflow:hidden
+}
+.card:before{
+ content:"";position:absolute;width:130px;height:130px;right:-80px;top:-80px;border-radius:50%;
+ background:rgba(91,224,255,.08);filter:blur(15px);transition:.3s
+}
+.card:hover{transform:translateY(-6px);border-color:rgba(91,224,255,.2);box-shadow:0 20px 50px rgba(0,0,0,.24)}
+.card:hover:before{transform:scale(1.5)}
+.icon{width:45px;height:45px;display:grid;place-items:center;border-radius:13px;background:rgba(21,159,224,.1);border:1px solid rgba(91,224,255,.1);font-size:20px;margin-bottom:16px}
+.card h3{font:700 15px Sora,sans-serif;margin:0 0 7px}
+.card p{font-size:12px;line-height:1.7;color:#8794a8;margin:0}
+
+/* CTA */
+.cta{
+ position:relative;overflow:hidden;text-align:center;padding:58px 20px;border-radius:27px;
+ border:1px solid rgba(91,224,255,.13);
+ background:radial-gradient(circle at 50% 0,rgba(21,159,224,.15),transparent 53%),linear-gradient(145deg,rgba(17,25,42,.88),rgba(7,11,19,.82));
+ box-shadow:0 25px 75px rgba(0,0,0,.35)
+}
+.cta h2{max-width:700px;margin:0 auto 11px}
+.cta p{max-width:590px;margin:0 auto 23px;color:var(--muted);font-size:13px;line-height:1.7}
+.cta .btn{display:inline-flex}
+
+/* Footer */
+footer{padding:28px 0 55px;border-top:1px solid rgba(255,255,255,.055)}
+.footer{display:flex;justify-content:space-between;gap:25px}
+.footer-title{font:800 12px Sora,sans-serif}
+.footer-small{color:#5e6b7f;font-size:9px;margin-top:5px}
+.disclaimer{max-width:650px;color:#68758a;font-size:9px;line-height:1.7;text-align:right}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s cubic-bezier(.16,1,.3,1)}
+.reveal.show{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.1);opacity:1}}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-25px)}}
+@keyframes gradient{to{background-position:220% center}}
+@keyframes shine{0%,45%{left:-70%}72%,100%{left:130%}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(56,228,154,.5)}70%{box-shadow:0 0 0 8px rgba(56,228,154,0)}100%{box-shadow:0 0 0 0 rgba(56,228,154,0)}}
+
+@media(max-width:850px){
+ .hero-grid{grid-template-columns:1fr;gap:25px;text-align:center}
+ .copy{margin:auto}.actions,.micro{justify-content:center}
+ .visual{order:-1;min-height:350px}
+ .avatar-wrap{width:225px;height:225px}.avatar{width:200px;height:200px}.ring{inset:-12px}
+ .features{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+ .container{width:calc(100% - 22px)}
+ .brand-sub{display:none}.brand-icon{width:36px;height:36px;flex-basis:36px}
+ .hero{padding:105px 0 58px}
+ h1{font-size:45px;margin-top:17px}
+ .copy{font-size:13px}.actions{flex-direction:column}.btn{width:100%}
+ .visual{min-height:310px}
+ .avatar-wrap{width:190px;height:190px}.avatar{width:168px;height:168px;border-width:4px}
+ .floating{font-size:8px;padding:8px 9px}.floating b{font-size:10px}
+ .f1{left:-8px;top:35px}.f2{right:-8px;top:62px}.f3{left:-4px;bottom:22px}
+ .status{right:-14px;bottom:4px;font-size:8px}
+ section{padding:68px 0}.features{grid-template-columns:1fr}
+ .card{padding:20px}.cta{padding:48px 17px;border-radius:23px}
+ .footer{flex-direction:column}.disclaimer{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}.light,.ring,.glow,.floating,.gradient,.primary:after,.dot{animation:none!important}
+ .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+
+<body>
+<div class="light l1"></div><div class="light l2"></div><div class="light l3"></div>
+
+<header>
+ <div class="container">
+  <nav class="nav">
+   <a class="brand" href="#">
+    <span class="brand-icon">⚡</span>
+    <span><span class="brand-name">TABAHI HACKER</span><span class="brand-sub">GROW • LEARN • CONNECT</span></span>
+   </a>
+   <a class="join-mini" href="https://t.me/+MCBp-wAKd7U4ZTg1" target="_blank" rel="noopener noreferrer">Join Telegram ↗</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="container hero-grid">
+  <div class="reveal">
+   <div class="badge"><span class="dot"></span> LIVE ON TELEGRAM</div>
+   <h1><span class="gradient">TABAHI<br>HACKER</span></h1>
+   <p class="tagline">Grow • Marketing • Investment • Market Insights</p>
+   <p class="copy">Learn, explore and grow with the TABAHI HACKER community. Get educational market knowledge, growth ideas, marketing insights and investment concepts in one focused community.</p>
+   <div class="actions">
+    <a class="btn primary" href="https://t.me/+MCBp-wAKd7U4ZTg1" target="_blank" rel="noopener noreferrer">🚀 <span>JOIN TABAHI HACKER</span></a>
+    <a class="btn secondary" href="#features">Explore Community ↓</a>
+   </div>
+   <div class="micro"><span>Free to join</span><span>Instant access</span><span>Educational content</span></div>
+  </div>
+
+  <div class="visual reveal d2">
+   <div class="glow"></div>
+   <div class="avatar-wrap">
+    <div class="ring"></div>
+    <div class="avatar"><img src="https://tabahi-growth-hub.lovable.app/__l5e/assets-v1/29848a10-4d2c-4f7d-8c7f-6adf6e4091dd/tabahi-hacker-profile.jpg" alt="TABAHI HACKER profile" fetchpriority="high"></div>
+    <div class="floating f1"><b>Growth</b>Build smarter ideas</div>
+    <div class="floating f2"><b>Insights</b>Learn & understand</div>
+    <div class="floating f3"><b>Community</b>Connect together</div>
+    <div class="status"><i></i> Community Online</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="features">
+ <div class="container">
+  <div class="head reveal">
+   <div class="kicker">What you get</div>
+   <h2>One community. <span class="gradient">More possibilities.</span></h2>
+   <p>Explore focused educational content around growth, marketing, investment concepts and market insights.</p>
+  </div>
+
+  <div class="features">
+   <article class="card reveal d1"><div class="icon">📈</div><h3>Growth</h3><p>Practical growth ideas and concepts to help you think bigger and build better strategies.</p></article>
+   <article class="card reveal d2"><div class="icon">🎯</div><h3>Marketing</h3><p>Discover marketing insights, positioning ideas and ways to improve how you reach people.</p></article>
+   <article class="card reveal d3"><div class="icon">💡</div><h3>Investment</h3><p>Educational investment concepts and market discussions to support your own learning.</p></article>
+   <article class="card reveal d1"><div class="icon">📊</div><h3>Market Insights</h3><p>Follow useful market knowledge, observations and ideas in a simple community format.</p></article>
+   <article class="card reveal d2"><div class="icon">🤝</div><h3>Community</h3><p>Connect with people interested in growth, business, marketing and market learning.</p></article>
+   <article class="card reveal d3"><div class="icon">🚀</div><h3>Become a Member</h3><p>Join the Telegram community and get instant access to the educational content shared there.</p></article>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="cta reveal">
+   <div class="kicker">Ready when you are</div>
+   <h2>Ready to Grow With <span class="gradient">TABAHI HACKER?</span></h2>
+   <p>Join our Telegram community today and explore growth ideas, marketing insights, investment concepts and market knowledge.</p>
+   <a class="btn primary" href="https://t.me/+MCBp-wAKd7U4ZTg1" target="_blank" rel="noopener noreferrer">🚀 <span>JOIN TELEGRAM COMMUNITY</span></a>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer">
+  <div><div class="footer-title">TABAHI HACKER</div><div class="footer-small">Grow • Marketing • Investment • Market Insights</div></div>
+  <p class="disclaimer">Disclaimer: All content shared by TABAHI HACKER is for educational and informational purposes only. It is not financial advice, investment advice, or a recommendation to buy or sell any asset. Please do your own research and make decisions according to your own circumstances.</p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ const items=document.querySelectorAll(".reveal");
+ if("IntersectionObserver" in window){
+  const io=new IntersectionObserver((entries,observer)=>{
+   entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add("show");observer.unobserve(entry.target)}
+   });
+  },{threshold:.08,rootMargin:"0px 0px -35px 0px"});
+  items.forEach(el=>io.observe(el));
+ }else{items.forEach(el=>el.classList.add("show"))}
+})();
+</script>
+</body>
+</html>
